@@ -2,6 +2,7 @@
 
 imdown (pronounce "I'm down") can be used to collect images from a directory
 tree and put them into a markdown file for markdown to compile to another format
+using [pandoc](https://pandoc.org/)
 (although I typically use pdf's so its targeted at that mainly.)
 
 # install
@@ -40,7 +41,7 @@ imdown figures -f pdf -o markdown_files/only_pdfs.md
 
 You can then manually adjust the markdown file and compile via pandoc.
 If you do not need to adjust it and just want the pdf, you can also skip the intermediate markdown file
-and pipe it straight into pandoc (of course for this you need pandoc installed!):
+and pipe it straight into pandoc (of course for this you need [pandoc](https://pandoc.org/) installed!):
 
 ```
 imdown figures -f pdf | pandoc -o output_pdfs/piped.pdf
