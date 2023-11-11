@@ -39,7 +39,7 @@ Or filter out a specific filetype only i.e. pdf's:
 imdown figures -f pdf -o markdown_files/only_pdfs.md
 ```
 
-You can then manually adjust the markdown file and compile via pandoc.
+You can then manually adjust the markdown file and compile via [pandoc](https://pandoc.org/).
 If you do not need to adjust it and just want the pdf, you can also skip the intermediate markdown file
 and pipe it straight into pandoc (of course for this you need [pandoc](https://pandoc.org/) installed!):
 
