@@ -51,11 +51,10 @@ def main():
         if filenames:
             for filename in filenames:
                 if Path(filename).suffix in args.filetypes:
-                    outstring += f"\n# {dirpath}\n"
                     path = os.path.relpath(
                         Path(dirpath) / filename, start=root_directory_of_md
                     )
-                    outstring += f"\n![{filename}]({path})\n"
+                    outstring += f"\n![{dirpath}/{filename}]({path})\n"
 
     if args.outfile is None:
         print(outstring)
