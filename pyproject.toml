@@ -1,0 +1,60 @@
+[build-system]
+requires = [
+  "setuptools >= 61.0.0",
+  "wheel",
+  "setuptools_scm[toml] >= 6.2"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imdown"
+description = "Collect images from a directory tree and add them to a markdown file."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE.md"}
+authors = [
+    {email = "l.sasse@fz-juelich.de"},
+    {name = "Leonard Sasse"},
+]
+
+keywords = [
+    "pandoc", "markdown", "images"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved",
+    "Natural Language :: English",
+    "Topic :: Software Development",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["version"]
+
+[project.urls]
+repository = "https://github.com/LeSasse/imdown"
+
+[project.scripts]
+imdown = "imdown.imdown:main"
+
+[project.optional-dependencies]
+dev = ["tox"]
+
+################
+# Tool configs #
+################
+
+[tool.setuptools]
+packages = ["imdown"]
+
+[tool.setuptools_scm]
+version_scheme = "python-simplified-semver"
+local_scheme = "no-local-version"
+write_to = "imdown/_version.py"
+
+[tool.black]
+line-length = 79
+target-version = ["py37"]
