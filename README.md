@@ -31,7 +31,7 @@ Collect all images from the `figures` directory and put them into a markdown fil
 ```
 imdown figures -o markdown_files/all_filetypes.md
 ```
-and see the result in [markdown_files/all_filetypes.md](markdown_files/all_filetypes.md).
+and see the result in [markdown_files/all_filetypes.md](example/markdown_files/all_filetypes.md).
 Or filter out a specific filetype only i.e. pdf's:
 
 ```
@@ -45,4 +45,4 @@ and pipe it straight into pandoc (of course for this you need pandoc installed!)
 ```
 imdown figures -f pdf | pandoc -o output_pdfs/piped.pdf
 ```
-and see the result in [output_pdfs/piped.pdf](output_pdfs/piped.pdf).
+and see the result in [output_pdfs/piped.pdf](example/output_pdfs/piped.pdf).
