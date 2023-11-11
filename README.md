@@ -1,6 +1,6 @@
 # imdown
 
-imdown (pronouce "I'm down") can be used to collect images from a directory
+imdown (pronounce "I'm down") can be used to collect images from a directory
 tree and put them into a markdown file for markdown to compile to another format
 (although I typically use pdf's so its targeted at that mainly.)
 
