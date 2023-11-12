@@ -9,8 +9,12 @@ from pathlib import Path
 def parse_args():
     """Parse the arguments."""
     parser = ArgumentParser(
-        "Collect images from a directory tree and add write them to a markdown"
-        "file that can be compiled using pandoc."
+        prog="imdown",
+        description=(
+            "Collect images from a directory tree and add write them to a "
+            "markdown file that can be compiled using pandoc. "
+            "(Author: Leonard Sasse)"
+        ),
     )
     parser.add_argument(
         "directory", help="Directory from which to collect images.", type=Path
