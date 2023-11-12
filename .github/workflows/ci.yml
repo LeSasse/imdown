@@ -1,0 +1,35 @@
+name: Run Tests
+
+on: [push, pull_request]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.7', '3.8']
+
+    steps:
+    - name: Set up system
+      run: |
+        bash -c "$(curl -fsSL http://neuro.debian.net/_files/neurodebian-travis.sh)"
+        sudo apt-get update -qq
+        sudo apt-get install git-annex-standalone
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools wheel
+        python -m pip install tox tox-gh-actions
+    - name: Test with tox
+      run: |
+        tox
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+      if: success() && matrix.python-version == 3.7

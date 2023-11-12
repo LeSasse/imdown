@@ -1,0 +1,21 @@
+codecov:
+  notify: {}
+  require_ci_to_pass: false
+
+comment: true
+
+coverage:
+  status:
+    patch:
+      default:
+        if_ci_failed: failure
+        if_no_uploads: error
+        if_not_found: success
+        target: 95.0
+    project:
+      default: false
+      library:
+        if_ci_failed: failure
+        if_no_uploads: error
+        if_not_found: success
+        target: 90.0

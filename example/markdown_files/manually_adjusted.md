@@ -1,5 +1,7 @@
 
-![../figures/analysis1/fig2.pdf](../figures/analysis1/fig2.pdf)
+![This is a new caption](../figures/analysis1/fig2.pdf)
+
+I have also added some text.
 
 ![../figures/analysis2/fig5.pdf](../figures/analysis2/fig5.pdf)
 
